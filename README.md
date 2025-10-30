@@ -1,61 +1,89 @@
-Desafio: Movimentando as Peças do Xadrez
+Movimentação das Peças de Xadrez em C
 Descrição
 
-Este programa em linguagem C simula o movimento de três peças de xadrez — Torre, Bispo e Rainha — utilizando diferentes estruturas de repetição (for, while e do...while).
-Cada peça realiza um movimento específico, e o programa exibe no console a direção percorrida a cada casa.
+Este programa em linguagem C simula a movimentação de quatro peças de xadrez — Torre, Bispo, Rainha e Cavalo — utilizando funções recursivas e estruturas de repetição.
+O objetivo é demonstrar o uso de recursividade, loops aninhados e controle de fluxo (continue, break) para representar o comportamento das peças no tabuleiro.
 
-Objetivo
+Estrutura do Programa
 
-Aplicar o uso das estruturas de repetição em C para representar a movimentação das peças de xadrez, de acordo com as regras de movimentação de cada uma.
+O código está dividido em quatro partes principais, uma para cada peça:
 
-Estruturas utilizadas
+1. Torre
 
-for: usada para o movimento da Torre, pois o número de repetições é conhecido.
+Movimento: horizontal (para a direita).
 
-while: usada para o movimento do Bispo, verificando a condição antes de cada repetição.
+Lógica: recursiva.
 
-do...while: usada para o movimento da Rainha, garantindo que o movimento ocorra pelo menos uma vez.
+Função: moverTorre(int casas)
 
-Lógica de movimentação
+A cada chamada recursiva, imprime “Direita” até atingir o número de casas definido.
 
-Torre: move-se 5 casas em linha reta para a direita.
+2. Bispo
 
-Bispo: move-se 5 casas na diagonal, combinando os movimentos Cima e Direita.
+Movimento: diagonal (para cima e para a direita).
 
-Rainha: move-se 8 casas para a esquerda.
+Lógica: recursiva com loops aninhados.
 
-Estrutura do programa
+Função: moverBispo(int casasVerticais, int casasHorizontais)
 
-Configuração da acentuação para o console (usando SetConsoleOutputCP(65001)).
+Para cada movimento vertical (“Cima”), imprime também o deslocamento horizontal (“Direita”) correspondente.
 
-Definição das variáveis que representam o número de casas para cada peça.
+3. Rainha
 
-Implementação dos movimentos:
+Movimento: horizontal (para a esquerda).
 
-Torre: for
+Lógica: recursiva.
 
-Bispo: while
+Função: moverRainha(int casas)
 
-Rainha: do...while
+Imprime “Esquerda” repetidamente até completar o número de casas definido.
 
-Impressão no console da direção de cada movimento com o comando printf.
+4. Cavalo
 
-Saída esperada
-Movimento da TORRE:
+Movimento: em “L” (duas casas para baixo e uma para a esquerda).
+
+Lógica: baseada em loops com múltiplas variáveis, utilizando continue e break.
+
+O programa imprime exatamente:
+
+Baixo
+Baixo
+Esquerda
+
+Recursos Utilizados
+
+Biblioteca <windows.h> — usada para configurar o terminal e permitir exibição correta de acentuação com SetConsoleOutputCP(65001).
+
+Recursividade — aplicada para Torre, Bispo e Rainha.
+
+Estruturas de repetição (for) — utilizadas no movimento do Bispo e do Cavalo.
+
+Controle de fluxo (continue, break) — aplicado no movimento do Cavalo para definir a sequência exata de passos.
+
+Exemplo de Saída
+
+Ao executar o programa, o resultado será semelhante a:
+
+Movimento da Torre:
 Direita
 Direita
 Direita
 Direita
 Direita
 
-Movimento do BISPO:
-Cima, Direita
-Cima, Direita
-Cima, Direita
-Cima, Direita
-Cima, Direita
+Movimento do Bispo:
+Cima
+Direita
+Cima
+Direita
+Cima
+Direita
+Cima
+Direita
+Cima
+Direita
 
-Movimento da RAINHA:
+Movimento da Rainha:
 Esquerda
 Esquerda
 Esquerda
@@ -65,18 +93,19 @@ Esquerda
 Esquerda
 Esquerda
 
-Requisitos atendidos
+Movimento do Cavalo:
+Baixo
+Baixo
+Esquerda
 
-Entrada de dados: valores definidos diretamente no código.
+Objetivo Educacional
 
-Lógica de movimentação: cada peça segue suas regras específicas.
+Este código tem fins didáticos e pode ser usado para:
 
-Saída de dados: direções exibidas corretamente no console.
+Praticar recursividade em C.
 
-Performance: execução rápida, sem atrasos.
+Compreender estruturas de repetição e controle de fluxo.
 
-Documentação e legibilidade: código comentado, identado e com variáveis descritivas.
+Simular movimentos de peças de xadrez de maneira lógica e estruturada.
 
-Tecnologia utilizada
-
-Linguagem: C
+Desenvolvido como exercício de programação em C para prática de funções recursivas e loops.
